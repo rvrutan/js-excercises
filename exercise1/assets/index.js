@@ -3,8 +3,8 @@
 // function: does one thing and one thing only
 
 
-var UNIT_PRICE = 11;
-var TAX_RATE = 0.08;
+var UNIT_PRICE = 10;
+var TAX_RATE = 0.07;
 var SHIPPING_COST = 4;
 
 function getUnitPrice() {
@@ -28,6 +28,8 @@ function getNumberOfItems() {
 function getTotalCost() {
     var numberOfItems = getNumberOfItems()
     var totalCost = getUnitPrice() * numberOfItems +
-        getTaxes() * numberOfItems + getShipping();
-    alert(totalCost);
+        getTaxes() +getShipping();
+        //used in JS to connect to HTML, looking for "cost ID" string variable
+    
+    document.getElementById("cost").innerHTML = "Total Cost: $" + totalCost;
 }
